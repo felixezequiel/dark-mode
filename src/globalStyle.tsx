@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle<{ color: string }>`
     box-sizing: border-box;
     color: ${ props => props.color };
     font-family: 'Arial';
-    font-weight: 100;
+    font-weight: 600;
     font-size: 100%;
   }
 `

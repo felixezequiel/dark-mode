@@ -4,13 +4,18 @@ import { Profile } from "../../components/profile"
 import { ContainerLogin } from "./style"
 import serialize from "form-serialize"
 import { Button } from "../../atom/button"
+import { BasicAuthTypes } from "../../types/global"
+import { useHistory } from "react-router"
+
 
 export const Login = () => {
-  
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const history = useHistory()
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const data = serialize(event.currentTarget, { hash: true, empty: false })
-    console.log(data)
+    const data = serialize<BasicAuthTypes>(event.currentTarget, { hash: true, empty: false })
+    localStorage.setItem('login', JSON.stringify(data))
+    history.push('/home')
   }
 
   return (
@@ -21,7 +26,7 @@ export const Login = () => {
       <Input 
         type='text'
         placeholder='User...'
-        name='user'
+        name='username'
       />
       <Input 
         type='password'

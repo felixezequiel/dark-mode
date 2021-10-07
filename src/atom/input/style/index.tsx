@@ -10,4 +10,8 @@ export const InputCustom = styled.input<{ color: string }>`
   outline: none;
   color: ${ props => props.color };
   background-color: transparent;
+  ::placeholder {
+    color: ${ props => props.color };
+    opacity: .5;
+  }
 `

@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerLogin = styled.form`
-  width: 70vw;
-  min-width: 350px;
-  max-width: 550px;
+  width: 350px;
   height: 100%;
   display: flex;
   flex-direction: column;

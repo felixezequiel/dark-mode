@@ -17,7 +17,7 @@ export const Login = () => {
     localStorage.setItem('login', JSON.stringify(data))
     history.push('/home')
   }
-  // testes
+
   return (
     <ContainerLogin
       onSubmit={ handleSubmit }
